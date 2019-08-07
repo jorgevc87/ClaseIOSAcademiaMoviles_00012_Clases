@@ -17,9 +17,18 @@ class ViewController: UIViewController {
         objAlumno1.curso = "IOS"
         
         print("obj alumno1: ", objAlumno1.nombreAlumno)
+        
+        let objClima = Clima(temperatura: 14.5, humedad: 11.3)
+        
+        
     }
     
 }//class
+
+struct Clima{
+    var temperatura : Float?
+    var humedad : Float?
+}
 
 class Alumno{
     var colegio = "San Silvestre"
@@ -37,5 +46,14 @@ class Alumno{
     
     init(){
         
+    }
+}
+
+class AlumnoEspecial : Alumno {
+    var turno : String?
+    
+    init(cole: String, nomb: String, edad: Int, curso: String, turno : String) {
+        super.init(cole: cole, nomb: nomb, edad: edad, curso: curso)
+        self.turno = turno
     }
 }
